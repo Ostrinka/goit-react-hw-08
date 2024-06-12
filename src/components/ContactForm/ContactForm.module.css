@@ -1,0 +1,31 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border: 1px solid #2a2a2a;
+  border-radius: 2px;
+  width: 320px;
+  padding: 10px;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 320px;
+}
+
+.btn {
+  margin: 10px auto;
+  width: 120px;
+  height: 30px;
+  text-align: center;
+  background-color: rgb(242, 237, 237);
+  border-radius: 5px;
+}
+
+.error {
+  color: red;
+  font-size: 10px;
+}

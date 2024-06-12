@@ -1,0 +1,18 @@
+.user {
+  display: flex;
+  justify-content: space-between;
+  width: 270px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 8px;
+}
+
+.btn {
+  margin-top: auto;
+  margin-bottom: auto;
+  border-radius: 5px;
+  background-color:rgb(242, 237, 237);
+}
+
