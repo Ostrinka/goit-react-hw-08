@@ -49,7 +49,8 @@ export const selectFilteredContacts = createSelector(
   [selectContacts, selectFilter],
   (contacts, filters) =>
     contacts.filter(contact =>
-      contact.name.toLowerCase().includes(filters.toLowerCase())
+      contact.name.toLowerCase().includes(filters.toLowerCase()) ||
+        contact.number.includes(filters)
     )
 );
 
