@@ -1,27 +1,30 @@
 .form {
   margin: 0 auto;
+  margin-top: 40px;
   margin-bottom: 20px;
-  background-color: #bff094;
+  background-color: #edf672;
   width: 600px;
   height: 300px;
   border-radius: 5px;
-  padding: 20px;
+  padding: 40px;
 }
 
 .label {
   display: block;
-  margin-bottom: 7px;
+  margin-top: 30px;
+  margin-bottom: 5px;
+  font-size: 20px;
 }
 
 .field {
-  width: 100%;
+  width: 580px;
   padding: 10px;
-  margin-bottom: 5px;
+  /* margin-bottom: 100px; */
   border: 1px solid #301bd093;
   border-radius: 5px;
 }
 
-.wrap {
+.wrapper {
   height: 50px;
   margin-bottom: 5px;
 }
@@ -34,15 +37,17 @@
 
 .btn {
   display: block;
-  width: 100%;
-  padding: 10px;
-  background-color: #0b86f9;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+    margin: 0 auto;
+    margin-top: 30px;
+    width: 100px;
+    padding: 10px;
+    background-color: #0b86f9;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 .btn:hover {
-  background-color: #1e0b89;
+  background-color: #3f21e8;
 }

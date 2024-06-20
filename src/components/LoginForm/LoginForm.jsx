@@ -2,7 +2,7 @@ import { useDispatch } from "react-redux";
 import { logIn } from "../../redux/auth/operations";
 import { Field, Form, Formik, ErrorMessage } from "formik";
 import { useId } from "react";
-import { login } from "../../validation";
+import * as Yup from "yup";
 import toast from "react-hot-toast";
 import css from "./LoginForm.module.css";
 
@@ -11,6 +11,15 @@ export default function LoginForm() {
 
   const mailId = useId();
   const passwordId = useId();
+
+  const login = Yup.object().shape({
+  email: Yup.string()
+    .email("Please enter a valid email address")
+    .required("Required"),
+  password: Yup.string()
+    .min(8, "Password must be at least 8 characters")
+    .required("Required"),
+});
 
   return (
     <Formik
@@ -36,7 +45,7 @@ export default function LoginForm() {
         <label htmlFor={mailId} className={css.label}>
           Email
         </label>
-        <div className={css.wrap}>
+        <div className={css.wrapper}>
           <Field
             type="email"
             name="email"
@@ -52,7 +61,7 @@ export default function LoginForm() {
         <label htmlFor={passwordId} className={css.label}>
           Password
         </label>
-        <div className={css.wrap}>
+        <div className={css.wrapper}>
           <Field
             type="password"
             name="password"

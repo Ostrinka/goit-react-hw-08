@@ -2,9 +2,22 @@ import { useDispatch } from "react-redux";
 import { register } from "../../redux/auth/operations";
 import { Field, Form, Formik, ErrorMessage } from "formik";
 import { useId } from "react";
-import { regist } from "../../validation";
+import * as Yup from "yup";
 import toast from "react-hot-toast";
 import css from "./RegistrationForm.module.css";
+
+const registration = Yup.object().shape({
+  name: Yup.string()
+    .min(3, "Too Short!")
+    .max(50, "Too Long!")
+    .required("Required"),
+  email: Yup.string()
+    .email("Please enter a valid email address")
+    .required("Required"),
+  password: Yup.string()
+    .min(8, "Password must be at least 8 characters")
+    .required("Required"),
+});
 
 export default function RegistrationForm() {
   const dispatch = useDispatch();
@@ -14,9 +27,10 @@ export default function RegistrationForm() {
   const passwordId = useId();
 
   return (
-    <Formik
+    <div className={css.container}>
+      <Formik
       initialValues={{ name: "", email: "", password: "" }}
-      validationSchema={regist}
+      validationSchema={registration}
       onSubmit={(values, actions) => {
         const newUser = {
           name: values.name,
@@ -38,7 +52,7 @@ export default function RegistrationForm() {
         <label htmlFor={nameId} className={css.label}>
           Name
         </label>
-        <div className={css.wrap}>
+        <div className={css.wrapper}>
           <Field
             type="text"
             name="name"
@@ -54,7 +68,7 @@ export default function RegistrationForm() {
         <label htmlFor={mailId} className={css.label}>
           Email
         </label>
-        <div className={css.wrap}>
+        <div className={css.wrapper}>
           <Field
             type="email"
             name="email"
@@ -70,7 +84,7 @@ export default function RegistrationForm() {
         <label htmlFor={passwordId} className={css.label}>
           Password
         </label>
-        <div className={css.wrap}>
+        <div className={css.wrapper}>
           <Field
             type="password"
             name="password"
@@ -88,5 +102,6 @@ export default function RegistrationForm() {
         </button>
       </Form>
     </Formik>
+    </div>
   );
 }
