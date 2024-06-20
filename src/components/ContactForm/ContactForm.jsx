@@ -11,13 +11,7 @@ export default function ContactForm() {
     name: "",
     number: ""
   };
-  // const userSchema = Yup.object().shape({
-  //   name: Yup.string().min(3, "Too Short!")
-  //     .max(50, "Too Long!").required("Required"),
-  //   number: Yup.string().min(3, "Too Short!")
-  //     .max(50, "Too Long!").required("Required")
-  // });
-
+ 
   const userSchema = Yup.object().shape({
     name: Yup.string()
       .matches(/^[aA-zZ\s]+$/, "Only alphabets are allowed")

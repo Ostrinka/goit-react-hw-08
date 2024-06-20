@@ -10,6 +10,14 @@ export default function HomePage() {
           💁‍♀️
         </span>
       </PageTitle>
+      <div className={css.text}> 
+        <p>
+          Contacts book is designed for efficient management and convenient access to user contact information.
+        </p>
+
+      </div>  
     </div>
+  
+      
   );
 }
