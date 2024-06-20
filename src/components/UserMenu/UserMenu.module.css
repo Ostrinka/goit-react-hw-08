@@ -7,3 +7,15 @@
 .username {
   font-weight: 700;
 }
+
+.btn {
+  display: block;
+  margin: 0 auto;
+  width: 100px;
+  padding: 5px;
+  background-color: #0b86f9;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}

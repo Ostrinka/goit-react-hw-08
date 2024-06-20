@@ -4,6 +4,7 @@ import Layout from "../Layout/Layout";
 import { refreshUser } from "../../redux/auth/operations";
 import { selectIsRefreshing } from "../../redux/auth/selectors";
 import { useDispatch, useSelector } from "react-redux";
+import { Toaster } from 'react-hot-toast';
 import RestrictedRoute from "../RestrictedRoute";
 import PrivateRoute from "../PrivateRoute";
 
@@ -33,6 +34,7 @@ export default function App() {
           <Route path="/contacts" element={<PrivateRoute component = {<ContactsPage/>} redirectTo = {"/login"} />} />
         </Routes>
       </Suspense>
+      <Toaster />
     </Layout>
   );
 }
